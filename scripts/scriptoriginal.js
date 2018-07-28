@@ -27,13 +27,13 @@ class Contact {
     constructor(name, email, phone, relation) {
         this.name = name;
         this.email = email;
-        this.phone = phone; 
+        this.phone = phone;
         this.relation = relation;
     }
 }
 const book = new AddressBook();
     while(true) {
-        let answer = /*prompt("Add, Remove, Delete, Print or Quit");*/
+        let answer = prompt("Add, Remove, Delete, Print or Quit");
         answer = answer.toLowerCase();
         if (answer === "add") {
             book.add(new Contact(this.name = prompt("Name?"), this.email = prompt("Email?"), this.phone = prompt("Phone?"), this.relation = prompt("Relation?")));
@@ -51,4 +51,3 @@ const book = new AddressBook();
             continue;
         }    
     }
-
