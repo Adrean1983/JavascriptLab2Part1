@@ -57,13 +57,17 @@ button {
     height: 45px;
 }
 
+button:hover {
+    border: solid 1px blue;
+}
+
 .container2 {
     display: grid;
     grid-template-columns: 33% 33% 33%;
     margin: 40px 50px 10px 50px;
     grid-row-gap: 20px;
 }
-#contactbox {
+.contactbox {
     width: 75%;
     background-color: rgba(255,255,255,0.8);
     height: 100px;

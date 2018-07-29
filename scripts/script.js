@@ -5,24 +5,24 @@ class AddressBook {
     }
     add() {
         const inputs = document.querySelectorAll("input[type='text']");
-        this.contacts.push(new Contact(inputs[0].value, inputs[1].value, inputs[2].value, inputs[2].value));
+        this.contacts.push(new Contact(inputs[0].value, inputs[1].value, inputs[2].value, inputs[3].value));
         this.display();
     }
     delete(index) {
         this.contacts.splice(index, 1);
         this.display();
     }
-    total() {
-        // creates a variable to be used for keeping a running total
-        let total = 0;
-        // loop through the array of products
-        for (let contact of this.contacts) {
-          // increments total for each product's total price (qty * price). 
-          total += (contact.price * contact.qty);
-        }
-        // sets the textContent of the class total to be the value of the total variable
-        document.querySelector(".total").textContent = `${total}`;
-    }
+    // total() {
+    //     // creates a variable to be used for keeping a running total
+    //     let total = 0;
+    //     // loop through the array of products
+    //     for (let contact of this.contacts) {
+    //       // increments total for each product's total price (qty * price). 
+    //       total += (contact.price * contact.qty);
+    //     }
+    //     // sets the textContent of the class total to be the value of the total variable
+    //     document.querySelector(".total").textContent = `${total}`;
+    // }
     display() {
         // calls the clear method
         this.clear();
@@ -49,25 +49,26 @@ class AddressBook {
           
           
           // selects the classes for name__column, price__column, and qty__column and appends the paragraphs created on lines 41-43
-          document.querySelector("#contactbox").appendChild(name);
-          document.querySelector("#contactbox").appendChild(email);
-          document.querySelector("#contactbox").appendChild(phone);
-          document.querySelector("#contactbox").appendChild(relation);
+          // Ask Sheamus
+          document.querySelector(".contactbox").appendChild(name);
+          document.querySelector(".contactbox").appendChild(email);
+          document.querySelector(".contactbox").appendChild(phone);
+          document.querySelector(".contactbox").appendChild(relation);
 
           
           // creates a section element to act as our container for our button
           const deleteBtn = document.createElement("section");
           // sets the innerHTML of the section element to contain a button. the button has an onclick attribute that will call the cart's delete method and pass in index as an argument.
           // the argument index was created on line 37 
-          deleteBtn.innerHTML = `<button onclick="cart.delete(${index});" class="list__btn" type="button">X</button>`;
+          deleteBtn.innerHTML = `<button onclick="book.delete(${index});" class=".trashcontainer type="button"></button>`;
           // appends the deleteBtn to the class of "btn__column"
-          document.querySelector(".btn__column").appendChild(deleteBtn);
+          document.querySelector(".trashcontainer").appendChild(deleteBtn);
           // increment index by 1
           index++;
         }
-        // calls the total method
-        this.total();
-      }
+        // // calls the total method
+        // this.total();
+    }
       clearList() {
         // initializes the products array to an empty array (empties/clears it)
         this.contacts = [];
