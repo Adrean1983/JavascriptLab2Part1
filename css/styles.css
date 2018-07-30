@@ -31,7 +31,6 @@ h1 {
     flex: 1;
     justify-content: center;
     align-items: center;
-
 }
 
 form {
@@ -53,6 +52,7 @@ input {
     padding: 10px;
     height: 25px;
 }
+
 button {
     height: 45px;
 }
@@ -67,6 +67,7 @@ button:hover {
     margin: 40px 50px 10px 50px;
     grid-row-gap: 20px;
 }
+
 .contactbox {
     width: 75%;
     background-color: rgba(255,255,255,0.8);
@@ -93,4 +94,7 @@ button:hover {
 .trashcontainer img {
     width: 100%;
     height: auto;
+    cursor: pointer;
 }
+
+
